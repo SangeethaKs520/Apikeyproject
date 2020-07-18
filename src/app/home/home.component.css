@@ -1,0 +1,22 @@
+mat-form-field {
+    display: block;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+::ng-deep .mat-form-field-infix {
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+}
+
+::ng-deep .mat-select {
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+}

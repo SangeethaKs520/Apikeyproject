@@ -1,0 +1,11 @@
+.navbarc{
+    background-color: rgb(21, 6, 49);;
+}
+
+.lmove{
+   margin-left: 1131px; 
+}
+
+.nav-link:hover{
+    background-color: yellow;
+}

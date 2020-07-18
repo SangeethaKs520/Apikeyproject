@@ -1,0 +1,59 @@
+<app-header></app-header>
+
+<div class="offset-md-9 mt-3">
+    <button class="bg-primary text-white border rounded" (click)="addService()">Add New Services</button>
+</div>
+<hr>
+
+<div class="container">
+<div class="row col-md-12 mt-5">
+    <div class="col-md-2 col-sm-2">Show
+        <select class="show-entries dropdown" [(ngModel)]="rowsOnPage">
+            <option [value]="5">5</option>
+            <option [value]="10">10</option>
+            <option [value]="15">15</option>
+            <option [value]="20">20</option>
+        </select>&nbsp;Entries
+    </div>
+
+    <!-- <div class="col-md-3 col-sm-7 row">
+        <div class="col-md-10 p-0 ml-0">
+            <input type="text" class="form-control" [(ngModel)]="term" (ngModelChange)="clearFilter()"
+                placeholder="Search by Name or Id">
+        </div> -->
+    <!-- <div class="col-md-2 p-0">
+            <button type="button" class="form-control" (click)="search()">
+                <i class="fas fa-search"></i>&nbsp;</button>
+        </div> -->
+</div>
+
+
+
+<!------Request table starts here-->
+<table class="table m-3" [mfData]="services_name" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage">
+    <thead class="table">
+        <tr>
+            <th> #</th>
+            <th>Service Name</th>
+            <th>Description</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr
+            *ngFor="let ele of mf.data ;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{ele.name}}</td>
+            <td>{{ele.description}}</td>
+            <td class="text-danger" (click)="delete(ele.id)">Delete</td>
+        </tr>
+    </tbody>
+    <tfoot class="offset-md-9">
+        <tr>
+            <td colspan="10">
+                <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+</div>

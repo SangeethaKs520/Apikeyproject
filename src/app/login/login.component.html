@@ -1,0 +1,22 @@
+<div class="background">
+    <!-- <div class="container "> -->
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <div class="jumbotron">
+                <h2 class="text-success offset-md-5">Login</h2>
+                <form [formGroup]="form">
+                    <div class="form-group">
+                        <label>Email Id</label>
+                        <input type="email" name="name" class="form-control" formControlName='email' value="">
+                    </div>
+                    <div class="form-group">
+                        <label>password</label>
+                        <input type="password" name="name" class="form-control" formControlName='password' value="">
+                    </div>
+                </form>
+                <button type="button" class="btn btn-primary btn-lg offset-md-5" (click)="onSubmit()">Login</button>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+</div>
